@@ -7,12 +7,60 @@ body {
   height: 100%;
 }
 
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+}
+a {
+  font-size: 13px;
+  color: rgb(29, 161, 242);
+  text-decoration: none;
+}
+
+.container {
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 600px;
+  border-left: 1px solid rgb(235, 238, 240);
+  border-right: 1px solid rgb(235, 238, 240);
+  text-align: left;
+}
+
+.main .main-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgb(235, 238, 240);
+}
+
+.main .main-header .logo2 {
+  width: 50px;
+  margin-right: 20px;
+}
+
 .content {
   max-width: 600px;
   height: 100%;
   margin: 0 auto;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
+}
+
+.content #Tweet {
+  background-color: rgb(29, 161, 242);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /* 
@@ -22,6 +70,107 @@ POSTS
 .post_form {
   padding: 20px 40px;
   border-bottom: 1px solid #ccc;
+}
+
+.home .post_form {
+  display: flex;
+  padding: 10px;
+}
+
+.home .post_form .post-icon {
+  width: 80px;
+  padding: 5px 15px 10px 10px;
+}
+
+.home .post_form .input-area {
+  width: calc(100% - 80px);
+  flex-grow: 1;
+}
+
+.home .post_form .post-icon img {
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(235, 238, 240);
+}
+
+.home .ditch {
+  height: 15px;
+  border-top: 1px solid rgb(235, 238, 240);
+  border-bottom: 1px solid rgb(235, 238, 240);
+  background-color: rgb(247, 248, 248);
+  border-bottom: 1px solid rgb(235, 238, 240);
+}
+
+.home .post_form .input-area .bottom-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid rgb(235, 238, 240);
+  padding-top: 8px;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.home .ditch {
+  height: 15px;
+  border-top: 1px solid rgb(235, 238, 240);
+  border-bottom: 1px solid rgb(235, 238, 240);
+  background-color: rgb(247, 248, 248);
+  border-bottom: 1px solid rgb(235, 238, 240);
+}
+
+.home .tweet-list {
+}
+
+.home .tweet-list .tweet {
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid rgb(235, 238, 240);
+}
+
+.home .tweet-list .tweet .user {
+  width: 80px;
+  padding: 5px 15px 10px 10px;
+}
+
+.home .tweet-list .tweet .user img {
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(235, 238, 240);
+}
+.home .tweet-list .tweet .name a .nickname {
+  color: rgb(21, 32, 43);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.home .tweet-list .tweet .name a .datetime {
+  padding-left: 10px;
+  color: rgb(71, 71, 71);
+  font-size: 14px;
+}
+
+.home .tweet-list .tweet .content .icon-list {
+  display: flex;
+  margin-top: 15px;
+}
+
+.home .tweet-list .tweet .content .icon-list .like img {
+  width: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.home .tweet-list .tweet .content .icon-list .like-count {
+  width: 25px;
+  padding-top: 2px;
+  color: #474747;
+}
+
+.home .tweet-list .tweet .name .small-menu {
+  padding-right: 10px;
 }
 
 .post_form input {

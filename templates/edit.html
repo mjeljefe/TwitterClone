@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <section class="post_form">
+    <form action="/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="name" value="{{post.name}}" required />
+      <input name="body" value="{{post.body}}" />
+      <input type="submit" value="Post" />
+      <button id="cancel" type="submit">Cancel</button>
+    </form>
+  </section>
+</section>
+{% endblock %}

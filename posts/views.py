@@ -31,5 +31,16 @@ def delete(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return HttpResponseRedirect("/")
-    output = 'POST ID IS' + str(post_id)
-    return HttpResponse(output)
+
+
+def edit(request,post_id):
+    post=Post.objects.get(id=post_id)
+    if request.method == 'POST':
+          form=PostForm(request.POST,request.FILES,instance = post)
+          
+          if form.is_valid():
+             post.save()
+             return HttpResponseRedirect('/')
+    else:
+        form=PostForm(PostForm)
+        return render(request,'edit.html',{'post':post, 'form':form})
