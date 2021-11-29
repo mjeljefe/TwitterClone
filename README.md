@@ -5,7 +5,7 @@ To make the project simple, we do not have a sign/login function.
 So there are not user accounts and follow function. You can challenge after you finish the course.
 ```
 Check out [LIVE Twitter clone DEMO](https://twitterclone-marcus.herokuapp.com/) here!!
-![Screenshot 2021-10-11 at 3 05 15 PM](Screen Shot 2021-11-29 at 3.04.58 PM![image](https://user-images.githubusercontent.com/93152654/143943019-18926fea-6e97-48f1-a74b-099668e4f596.png)
+![Screenshot 2021-10-11 at 3 05 15 PM](https://user-images.githubusercontent.com/93152654/143943019-18926fea-6e97-48f1-a74b-099668e4f596.png)
 )
 ## Tech used
 ```
