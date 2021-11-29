@@ -1,147 +1,89 @@
-{% extends "base.html" %} {% block content %} {% load static %}
-<body class="home">
-  <div class="container">
-    <div class="main">
-      <div class="main-header">
-        <img src="/static/img/blueTIS.png" class="logo2" />
-        <h1>Home</h1>
-      </div>
+{% extends "base.html" %}{% block content %} {% load static %}
 
-      <div class="content">
-        <div class="post_form">
-          <div class="post-icon">
-            <img src="/static/img/sample.jpg" />
-          </div>
+<section id='title'>
+<a href="/">
+<img class="white-logo" src="/static/img/blueTIS.png" alt=" ">
+</a>
+<h1>Home</h1>
+</section>
 
-          <div class="input-area">
-            <form action="/tweetAdd/" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="csrfmiddlewaretoken" value="9dOdXH81umwLK1VnXOwrwSY64oDQ1WA9gbUSqTlMbIQyVkjp4wSqMSj3AAO56jFJ">
-                <input type="text" name="name" placeholder="Your name" maxlength="14" required="">
-                <textarea name="body" placeholder="What's happening?" maxlength="140" required=""></textarea>
-                <div class="bottom-area">
-                    <div class="mb-0">
-                        <input class="form-control form-control-sm" name="image" type="file">
-                    </div>
 
-                    <button class="btn" id="Tweet" type="submit">Tweet</button>
-                </div>
 
-            </form>
-          </div>
 
-        </div>
-      </div>
-      <div class="posts">
-        <ul>
-          {% for post in posts %}
-          <li>
-            <img
-              class="menu_icon js-menu-icon"
-              src="{% static 'img/option.png' %}"
-            />
-            <div class="menu">
-              <a href="/delete/{{ post.id }}/">Delete</a><br /><br />
-              <a href="/edit/{{ post.id }}/"> Edit</a>
-            </div>
 
-            <div class="logo">
-              <img src="{% static 'img/user.png' %}" alt="" />
-            </div>
+<section class="content">
+<section class="post_form">
+<form action="/" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
 
-            <div class="name_body">
-              <div class="name">{{ post.name }}<br /></div>
-              <div class="datetime">{{ post.created_at }}<br /></div>
-              <p>{{ post.body }}<br /></p>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-        
-    
-      <div class="ditch"></div>
-      <div class="tweet-list">
-        <div class="tweet">
-          <div class="user">
-            <a href="#">
-              <img class="" src="/static/img/sample.jpg" >
-            </a>
-          </div>
-          <div class="content2">
-            <div class="name">
-              <a href="#" class="">
-                <span class="nickname"></span>    
-                <span class="datetime"></span>            
-              </a>
-              <img 
-              class="menu_icon js-menu-icon"
-              src="{% static 'img/option.png' %}">
-            </div>
-            <p></p>
-            <div class="icon-list">
-              <div class="like js-like" data-tweet-id="153">
-                  <img src="/static/img/icon-heart-gray.svg">
-              </div>
-              <div class="like-count js-like-count">
-                  3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tweet-list">
-        <div class="tweet">
-            <div class="user">
-                <a href="#">
-                    <img src="/static/img/sample-icon.jpg" class="">
-                </a>
-            </div>
-            <div class="content">
-                <div class="name">
-                    <a href="#" class="">
-                        <span class="nickname">
-                            hhf
-                          </span>
-                        <span class="datetime">
-                            1 weeks ago
-                        </span>
-                    </a>
-                    
-                    <img src="/static/img/icon-small-menu.svg" class="small-menu js-popover" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="<a href='/tweetEditView/151/'>Edit</a><br><a href='/tweetDelete/151/'>Delete</a>" data-bs-html="true" data-bs-original-title="" title="">
-                </div>
-                <p>
-                    ghghg
-                </p>
-                
-                    <a href="http://res.cloudinary.com/techis/image/upload/v1636952999/y2prdsz6dfn8xhbueebe.png" target="_blank">
-                        <img class="post-image" src="http://res.cloudinary.com/techis/image/upload/v1636952999/y2prdsz6dfn8xhbueebe.png">
-                    </a>
-                
-                <div class="icon-list">
-                    <div class="like js-like" data-tweet-id="151">
-                        <img src="/static/img/icon-heart-gray.svg">
-                    </div>
-                    <div class="like-count js-like-count">
-                        1
-                    </div>
-                </div>
-            </div>
-        </div>
-      <script
-        src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"
-      ></script>
-      <script src="{ %static 'js/posts.js'% }"></script>
-      <script>
-        $(function () {
-          $(".js-menu-icon").click(function () {
-            $(this).next().toggle();
-          });
-        });
-      </script>
-    </div>
-  </div>
-  {% endblock %}
-  
-</body>
+
+<input type="text" name="name" placeholder="Your name" style="/* width :89.7%; *//* margin-bottom: 10px; */border: 0px;width: 89.7%;background: #e6fef7;border-radius: 5px;margin-bottom: 10px;padding: 10px; font-size: 15px;">
+<textarea name="body" placeholder="What's happening?" maxlength="140" required=""></textarea>
+
+
+<div class="flex">
+<input class="upload-file" type="file" value="Choose File" name="image">
+<input type="submit" id="tweet-button" value="Tweet"/>
+</div>
+</div>
+
+
+</form>
+
+</section>
+<div class="divider"></div>
+<section class="posts">
+<ul>
+
+{% for post in posts %}
+<li>
+
+<img class ="menu_icon js-menu-icon" src="{% static 'img/option.png' %}"/>
+<div class ="menu">
+<a href="/edit/{{post.id}}/">Edit</a>
+<br>
+<a href="/delete/{{post.id}}/">Delete</a>
+</div>
+<div class="logo">
+<img src="{% static 'img/user.png' %}"/>
+</div>
+
+<div class="name_body">
+<div class="name"> {{ post.name }} <br></div>
+<div class='datetime'> {{ post.created_at }} </div>
+</br>
+<p> {{ post.body }}<br></p>
+</br>
+{% if post.image %}
+<img class="post-border" src="{{ post.image.url }}">
+{% endif %}
+<div class="icon_list">
+<form id="likes-form" action="{% url 'like_post' post.pk %}" method='POST'>
+{% csrf_token %}
+<button class="like-button" type="submit", name="post_id", value="{{ post.id }}">&#10084;</button>
+{{post.likes}}
+</form>
+</div>
+
+</li>
+{% endfor %}
+</ul>
+
+
+
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="{% static 'js/posts.js' %}">
+</script>
+<footer>
+
+
+
+
+
+</footer>
+</section>
+
+{% endblock %}
